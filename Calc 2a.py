@@ -49,8 +49,16 @@ while True:
             print('Please enter a numerical value')
             continue
 
+# Exception handling applied for division by 0
         if operation == 1:
-            print(value1, "/", value2, "=", divide(value1, value2))
+            try:
+                value1 / value2
+            except ZeroDivisionError:
+                print(value1, "/", value2, "= 0")
+            else:
+                print(value1, "/", value2, "=", divide(value1, value2))
+
+
 
         elif operation == 2:
             print(value1, "*", value2, "=", multiplication(value1, value2))
